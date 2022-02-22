@@ -1,0 +1,18 @@
+server:
+  port: 8801
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+
+
+
